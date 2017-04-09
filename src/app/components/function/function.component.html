@@ -1,0 +1,81 @@
+<!--component html goes here -->
+<ul class="breadcrumb">
+  <li><a routerLink="">Home</a></li>
+  <li class="active">Functions</li>
+</ul>
+
+<h2 class="text-info">Functions</h2>
+<blockquote>
+  <p>
+    The various types of functions in javascript are :
+  </p>
+  <ul>
+    <li>Named functions</li>
+    <li>Annonymous functions</li>
+    <li>IIFE</li>
+  </ul>
+  <br>
+  <p>Functions are typically blocks of code, which are designed to perform a specific task. </p>
+</blockquote>
+<fieldset>
+  <legend class="text-info">Named functions</legend>
+  The functions we have seen in the previous section is what is termed as named function. As the name suggests, named functions
+  are those functions which have name.
+  <pre>
+      function abc(){{'{'}}
+        alert("Hello world");
+      {{'}'}}
+  </pre> To invoke/execute the function, we will call it by its name &amp; the paranthesis.
+  <br>
+  <code>
+      abc();<span class="text-success">// Hello World</span>
+  </code>
+</fieldset>
+<br>
+<fieldset>
+  <legend class="text-info">Annonymous functions</legend>
+  As the name suggests, annonymous functions are those functions which don't have a name. They are defined pretty much the
+  same way as named functions, except they dont have a name.
+  <pre>
+      function (){{'{'}}
+        alert("Hello world");
+      {{'}'}}
+  </pre> Annonymous functions as such cannot be invoked, since they dont have a name. So usually they are assigned to a
+  variable, or defined as a callback function.
+  <pre>
+    var x = function (){{'{'}}
+        alert("Hello world");
+    {{'}'}}
+  </pre> In the above code we are assigning the annonymous function to the variable x. Now that we have the annonymous
+  function stored in variable x, we can invoke it just like a named function.
+  <br>
+  <code>
+      x(); <span class="text-success">// Hello World</span>
+  </code>
+  <br>
+  <pre>
+      setTimeout(function(){{'{'}}
+        alert("Hello World");
+      {{'}'}}, 1000)
+  </pre> What the above code does is, it executes the annonymous function after a period of 1sec(1000 milliseconds). In
+  this context, we are using annonymous function as a callback function.
+</fieldset>
+<br>
+<fieldset>
+  <legend class="text-info">IIFE</legend>
+  IIFE stands for Immediately Invoking Function Execution. IIFE is an annonymous function which is executed as soon as it is
+  loaded in the memory, hence the name Immediately invoking functions. These types of functions are popularly found in plugins,
+  for instance jQuery. We just import the jQuery file into the HTML page by mentioning its location, since it is defined
+  as an IIFE, all its methods are readily available for use. Which is why its always written above all the custom / user
+  defined javascript files.
+  <pre>
+     (function(){{'{'}}
+        alert("Hello World");     
+     {{"}"}})()
+  </pre> We dont have to invoke it, it gets automatically executed as soon as it is loaded in the memory.
+</fieldset>
+<br>
+<div class="nxtPrvBtnDv">
+  <a routerLink="/data-types" class="btn btn-success btn-xs pull-right">Previous</a>
+  <a routerLink="/scope" class="btn btn-success btn-xs pull-right">Next</a>
+</div>

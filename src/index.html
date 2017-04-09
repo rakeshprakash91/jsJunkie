@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Free javascript tutorials">
+  <meta name="keywords" content="javascript, hoisting, closure, object, functions, scope, jsjunkie">
+  <meta name="author" content="Rakesh Prakash">
+  <title>Js Junkie</title>
+  <base href="/">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+</head>
+<body>
+ <my-app>Loading the awesome...</my-app>
+ <script>
+   // fix to change the navbar active toggle
+   $(function(){
+      $(".nav a").on("click", function(){
+        $(".nav").find(".active").removeClass("active");
+        $(this).parent().addClass("active");
+      });
+   })
+</script>
+</body>
+</html>

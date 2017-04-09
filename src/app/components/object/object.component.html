@@ -1,0 +1,206 @@
+<ul class="breadcrumb">
+<li><a routerLink="">Home</a></li>
+<li class="active">Objects &amp; Arrays</li>
+</ul>
+
+
+<h2 class="text-info">Object &amp; Arrays</h2>
+<blockquote>
+  <p>
+    An object is a collection of properties, properties in the form of key value pair. The key is usually a string name, and the value might be anything from a simple number/boolean/string to a function. As we have seen in the <a routerLink="/data-types">datatype</a> section, the object properties can be accessed using the dot(.) operator.
+  </p>
+  <p>In javascript, both Arrays &amp; Objects are of the data type Object.</p>
+  <pre> 
+        var a = [1,2,3];<br>
+        console.log(typeof a); <span class="text-success">// object</span><br>
+        var obj = {{'{'}} b : 1{{'}'}} <br>
+        console.log(typeof obj); <span class="text-success">// object</span>
+  </pre>
+  <p>
+      The key difference between arrays &amp; objects are, array is a collection of data of single data type i.e if it is a number array, all the elements would be numbers, or if it is a string array, all the elements will be string. However when it comes to objects, one property can have a number value, another one a string. 
+      <br>
+  </p>
+<pre>
+    var arr = [1,2,3,4]; <span class="text-success">// all elements are numbers</span>
+    <br>
+    var obj = {{'{'}}
+        x : 5,
+        y : "hello world"
+    {{'}'}}
+</pre>
+</blockquote>
+ 
+<fieldset>
+  <legend class="text-info">Creating Arrays</legend>
+  There are multiple ways to create an array
+  <pre>
+      var arr = []; <span class="text-success">// empty array initialization</span>
+      var arr = [1,2,3,4]; <span class="text-success">// Initializing array with values</span>
+      var arr = new Array(); <span class="text-success">// instantiating using new keyword</span>
+  </pre> 
+  <br>
+  <p>
+      Prefer the 1<sup>st</sup> or 2<sup>nd</sup> method, as it is faster.
+  </p>
+</fieldset>
+<fieldset>
+   <legend class="text-info">Creating Objects</legend>
+    Just like arrays, we have multiple ways to create an object as well
+    <pre>
+        var obj = {{'{'}}{{'}'}}; <span class="text-success">// empty Object initialization</span>
+        var obj = {{'{'}} b : 1{{'}'}}; <span class="text-success">// initializing with value</span>
+        var obj = new Object();
+    </pre>
+    <p>
+      Prefer the 1<sup>st</sup> or 2<sup>nd</sup> method, as it is faster.
+  </p>
+</fieldset>
+
+<fieldset>
+   <legend class="text-info">
+        Accessing Array Elements
+    </legend>
+
+    <pre>
+        var arr = [1,2,3,4];
+        console.log(arr[0]); <span class="text-success">// 1</span>
+    </pre>
+    <br>
+    Array elements are accessed by their index. Index starts from 0. So to access the first element in the array, we write array name followed by square brackets and the number 0.
+</fieldset>
+<fieldset>
+   <legend class="text-info">
+        Accessing Object Properties
+    </legend>
+    <pre>
+        var obj = {{'{'}}
+            x : 1,
+            y : 2
+        {{'}'}};
+        console.log(obj.x); <span class="text-success">// 1</span>
+        console.log(obj['x']); <span class="text-success">// 1</span>
+    </pre>
+    Object properties are accessed by using the dot(.) operator. For instance if we wanted to access the property <b>x</b>, we would write object name dot(.) property key i.e <b> obj.x </b>.
+    We can also access the property <b>x</b> using the square brackets, and passing in the key as a string i.e <b>obj['x']</b>
+</fieldset>
+
+<fieldset>
+   <legend class="text-info">Adding new elements to arrays</legend>
+    <h3>Using push</h3>
+    <pre>
+        var arr = [1,2,3];
+        arr.push(4);
+        console.log(arr); <span class="text-success">// [1,2,3,4]</span>
+    </pre>
+    Using the push method, a new value can appended to the existing array.
+    <br>
+    <h3>Using Splice</h3>
+    <pre>
+        var arr = [1,2,3];
+        <span class="text-success">// arrayName.splice(index, numberOfElementsToBeRemoved, newElemetsToBeAdded)</span>
+        arr.splice(0,0,0);
+        console.log(arr); <span class="text-success">// [0,1,2,3]</span>
+    </pre>
+    <br>
+    As given above, the syntax for using splice to add new element is, the index in which the new values need to be entered, the second parameter is number of elements that need to be removed from the index specified previously, and finally the elements that need to be added to the array.
+    Since we are intending to only add new elements, we will keep the 2<sup>nd</sup> parameter <b>0</b>;
+
+    The advantage of using splice is we can add a new element in any given index, we can add as many number of elements in one go. Also, if we wish to remove some elements and then add new elements, that is also possible.
+    <pre>
+        var arr = [1,4,3];
+        arr.splice(1,1,2);
+        console.log(arr); <span class="text-success">// [1,2,3]</span>
+    </pre>
+    <br>
+    In the above code snippet, we removed the element in the 2<sup>nd</sup> position and replaced it with the value 2.
+    <h3>Using unshift</h3>
+
+    <pre>
+        var arr = [1,4,3];
+        arr.unshift(0);
+        console.log(arr); <span class="text-success">// [0,1,4,3]</span>
+    </pre>
+    The unshift method adds the parameters it has to the begining of the array.
+</fieldset>
+<fieldset>
+   <legend class="text-info">
+        Adding new properties to objects
+    </legend>    
+    <h3>Using dot(.)</h3>
+    <pre>
+        var obj = {{'{'}}{{'}'}};
+        obj.a = 1;
+        console.log(obj); <span class="text-success">// Object {{'{'}}a: 1{{'}'}}</span>
+    </pre>
+    <br>
+    The above code, initialized an empty object. Using the dot operator, we are adding a new property <b>a</b> to the objet obj. We can also have the property contain a function in the following way.
+    <pre>
+        var obj = {{'{'}}{{'}'}};
+        obj.a = function(){{'{'}}
+            console.log('hello world');
+        {{'}'}}
+        obj.a(); <span class="text-success">// hello world</span>
+    </pre>
+    
+</fieldset>
+<fieldset>
+   <legend class="text-info">
+        Deleting element from array
+    </legend>
+    <h3>Using splice</h3>
+    <pre>
+        var arr = [1,2,3];
+        arr.splice(1,1);
+        console.log(arr); <span class="text-success">// [1,3]</span>
+    </pre>
+    As discussed above, in the splice method, if we give only the first 2 parameters, the elements will get removed or spliced from the array.
+    <h3>Using pop</h3>
+    <pre>
+        var arr = [1,2,3];
+        arr.pop();
+        console.log(arr); <span class="text-success">// [1,2]</span>
+    </pre>
+    The pop method would remove the last element in the array.
+    <h3>Using Shift</h3>
+    <pre>
+        var arr = [1,4,3];
+        arr.shift();
+        console.log(arr); <span class="text-success">// [4,3]</span>
+    </pre>
+    The Shift method, effectively moves the elements to the left by 1 place, effectively removing the first element in the process. It returns the element that was shifted.
+    
+</fieldset>
+<fieldset>
+   <legend class="text-info">
+        Deleting property from object
+    </legend>
+    <pre>
+        var obj = {{'{'}}
+            a : 1
+        {{'}'}}
+        delete obj.a;
+        console.log(obj); <span class="text-success">// Object{{'{'}}{{'}'}}</span>
+   </pre>
+   To delete a property from an object, use the keyword delete, followed by the object name dot(.) property name.
+</fieldset>
+
+ <h3 class="text-warning">Note</h3>
+ <p class="text-success">The data-type of arrays &amp; objects can be identified by using <b>instanceof</b></p>
+ <pre>
+         var arr = [1,2,3];
+        console.log(arr instanceof Array); <span class="text-success">// true</span> <br>
+        var obj = {{'{'}} b : 1{{'}'}};
+        console.log(obj instanceof Object); <span class="text-success">// true</span>
+ </pre>
+ <br>
+ <br>
+ <p class="text-success">
+     Do not use <b>delete</b> to delete elements from an array, it would leave the corresponding element position with <b>undefined</b> value, which means the size of the array won't reduce even though the element has been deleted. </p>
+     <br>
+     <p class="text-success">
+         We can use prototype to add new properties &amp; Object.create() to create new objects. However since we are not covering OO concepts in here, we would be skipping it.
+     </p>
+<div class="nxtPrvBtnDv">
+  <a routerLink="/scope" class="btn btn-success btn-xs pull-right">Previous</a>
+  <a routerLink="/closure" class="btn btn-success btn-xs pull-right">Next</a>
+</div>

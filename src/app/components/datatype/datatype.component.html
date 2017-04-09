@@ -1,0 +1,106 @@
+<!--component html goes here -->
+<ul class="breadcrumb">
+  <li><a routerLink="">Home</a></li>
+  <li class="active">Data Types &amp; Variables</li>
+</ul>
+<h2 class="text-info">Data Types &amp; Variables</h2>
+<blockquote>
+  <p>
+    The various types of data types present in javascript are :
+  </p>
+  <ul>
+    <li>Number</li>
+    <li>String</li>
+    <li>Boolean</li>
+    <li>Undefined</li>
+    <li>Function</li>
+    <li>Object</li>
+  </ul>
+  <br>
+  <p>Javascript is a dynamically typed language, i.e a variable initialized with a number can take a string as a value in the
+    same code block. A javascript variable is declared using the keyword var.</p>
+</blockquote>
+<fieldset>
+  <legend class="text-info">Number</legend>
+  The data type number can hold both whole numbers as well as floating/ decimal values.
+  <pre>
+      var x = 10; <span class="text-success">//number</span>
+  </pre>
+</fieldset>
+<br>
+<fieldset>
+  <legend class="text-info">String</legend>
+  The data type string can hold pretty much any value. It is defined by putting the string content inside /' or /" quoutes;
+  <pre>
+      var str = "Hello World"; <span class="text-success">//string</span>
+  </pre>
+</fieldset>
+<br>
+<fieldset>
+  <legend class="text-info">Boolean</legend>
+  The data type boolean can hold true or false values.
+  <pre>
+      var isValid = true; <span class="text-success">//boolean</span>
+  </pre>
+</fieldset>
+<br>
+<fieldset>
+  <legend class="text-info">Undefined</legend>
+  A variable which is declared but not defined will have its value as undefined
+  <pre>
+      var x;
+      console.log(x); <span class="text-success">// undefined</span>
+  </pre>
+</fieldset>
+<br>
+<fieldset>
+  <legend class="text-info">Function</legend>
+  Functions are blocks of code, which are designed to perform a specific task. The advantage of using functions is, you dont
+  have to write the same code in multiple locations. Define the function once, invoke it whenever required. We would be looking
+  into functions in detail in the next section.
+  <pre>
+      function add(a, b){{'{'}}
+        return a+b;
+      {{'}'}}
+      add(2, 3); <span class="text-success">//returns 5</span>
+  </pre>
+</fieldset>
+<br>
+<fieldset>
+  <legend class="text-info">Object</legend>
+  An object is a collection of properties, properties in the form of key value pair. The key is usually a string name, and the value might be anything from a simple number/boolean/string to a function.
+  Consider an employee ID card. All ID cards would be having an employee ID, name, location etc. We can map all these properties within an object as key value pair.
+  <pre>
+      var empIDCard = {{'{'}} 
+        employeeID : 898943,
+        employeeName : "Tom",
+        location : "Earth" 
+      {{'}'}} 
+      
+  </pre> Each attribute/property in the object can be accessed by using object name followed by "." and attribute/property
+  name. To access the employeeID,
+  <br>
+  <code>                      
+     empIDCard.employeeID
+    </code>
+  <br> would return the value 898943
+  <br> Objects can contain more than just values, they can also contain functions.
+  <pre>
+      var employee = {{'{'}}
+        empFirstName : "Tom",
+        empLastName : "Jerry",
+        empFullName : function(){{'{'}} 
+          return employee.empFirstName + " " +employee.empLastName;
+     {{'}'}}
+   {{'}'}}
+    </pre>
+  <code>
+      employee.empFullName
+    </code>
+  <br> would return Tom Jerry. In javascript Arrays are also considered as objects, we would be looking it in detail in the
+  coming sections.
+</fieldset>
+<br>
+<div>
+  <a routerLink="/functions" class="btn btn-success btn-xs pull-right">Next</a>
+</div>

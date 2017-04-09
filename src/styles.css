@@ -1,0 +1,77 @@
+html {
+  background-color: black;
+  position: relative;
+  min-height: 100%;
+  word-break: keep-all;
+  text-align: justify;
+}
+
+#self {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+pre {
+  padding-top: 2%;
+  margin-top: 1%;
+}
+
+.findMe, .nxtPrvBtnDv{
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-xs {
+    width: 100px;
+    border-radius: 10px;
+}
+
+.breadcrumb{
+  padding: 8px 0px;
+  background-color: white;
+  border: none;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+@media(max-width : 480px){
+  .findMe {
+    flex-wrap: wrap;
+  }
+  
+  .findMe a{
+    margin-top: 2%;
+  }
+}
+
+@media(max-width : 768px )
+{
+  pre{
+    padding-top: 5%;
+    margin: 14px 0;
+
+    padding-right: 5%;
+  }
+  .selfImg {
+    width : 100%;
+  }
+  #self{
+    position: relative;
+    left: 27%;
+  }
+  .intro{
+    text-align: justify;
+  }
+
+}
+
+@media(max-width : 768px) and (orientation:landscape) {
+  #self{
+    position: relative;
+    left: 35% !important;
+  }
+  .selfImg {
+    width : 100%;
+  }
+ }

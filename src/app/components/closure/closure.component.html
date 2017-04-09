@@ -1,0 +1,44 @@
+<ul class="breadcrumb">
+<li><a routerLink="">Home</a></li>
+<li class="active">Closure</li>
+</ul>
+
+
+<h2 class="text-info">Closure</h2>
+<blockquote>
+  <p>
+    Closures are functions that refer to independent (free) variables (variables that are used locally, but defined in an enclosing scope). In other words, these functions 'remember' the environment in which they were created.
+  </p>
+  <small>MDN</small>
+</blockquote>
+<fieldset>
+  <pre>
+      function abc(){{'{'}}
+       var x = 10;
+       return function(y){{'{'}}
+            return x + y;
+       {{'}'}}
+      {{'}'}}
+      var z = abc();
+      console.log(z(5)); 
+  </pre> 
+  <br>
+  In the above code snippet, we have a function abc, which has a variable <b>x</b> initialized with value 10. This function returns another function which takes in a parameter <b>y</b> and returns the sum of the parent function variable and the parameter passed.
+  when we execute the function abc, it returns a function, which gets assigned to the variable <b>z</b>. It means this is equivalent to writing
+  <br>
+  <pre>
+      var z = function(y){{'{'}}
+            return x + y;
+      {{'}'}}
+  </pre> 
+  <br>
+  If we look at the above code as such, <b>x</b> is not defined, but since the current function is defined as an inner function, it will have access to the variable <b>x</b> from its parent function.
+  Hence when we execute the function in variable <b>z</b>, it returns 15.
+  So even though the variable <b>x</b> is defined inside the function abc, and its execution has completed, it still remains in the memory and remain accessible to the child functions.
+</fieldset>
+ <h3 class="text-warning">Note</h3>
+ <p class="text-success">Disadvantage of closures, is that the variables like <b>x</b> remains in memory, and cannot be removed.</p>
+ <div class="nxtPrvBtnDv">
+  <a routerLink="/object" class="btn btn-success btn-xs pull-right">Previous</a>
+  <a routerLink="/hoisting" class="btn btn-success btn-xs pull-right">Next</a>
+</div>

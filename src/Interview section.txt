@@ -1,0 +1,6 @@
+Interview section
+
+    typeof & instance of
+
+    functions
+     just function name -> returns the function

@@ -1,0 +1,64 @@
+<ul class="breadcrumb">
+<li><a routerLink="">Home</a></li>
+<li class="active">Hoisting</li>
+</ul>
+
+
+<h2 class="text-info">Hoisting</h2>
+<blockquote>
+  <p>
+    In javascript if we declare a variable inside a function, irrespective of the place where its declared, all declarations are available at the top of the function at the time of execution. Same goes for named functions, irrespective of the place where a function is defined in the script page, all named functions would be available at the very top. This behavior is termed as hoisting. There are two types of hoisting 
+  </p>
+  <ul>
+    <li>Variable hoisting</li>
+    <li>Function hoisting</li>
+  </ul>
+</blockquote>
+<fieldset>
+  <legend class="text-info">Variable hoisting</legend>
+  As mentioned above, all variable declarations are available at the top of the function or its current scope(global/function, we would be covering scopes in detail in the next section). This enables us to use the variables even before it is declared within a function.
+  <pre>
+      function abc(){{'{'}}
+        x = 10;
+        console.log(x);
+        var x;
+      {{'}'}}
+  </pre> 
+  <br>
+  <code>
+      abc(); <span class="text-success">// 10</span>
+  </code>
+  <br>
+  As we can see, there won't be an error thrown. The reason being the declaration is available at the top of the function/its current scope. So we can say, the above code is equivalent to 
+    <pre>
+      function abc(){{'{'}}
+        var x; 
+        x = 10;
+        console.log(x);
+      {{'}'}}
+  </pre> 
+  <br>
+  
+</fieldset>
+<br>
+<fieldset>
+  <legend class="text-info">Function hoisting</legend>
+  All named functions would be available at the top of the script page, irrespective of the place where it is actually defined. Hence enabling us to access/ invoke the function anywhere in the script.
+  <pre>
+      abc();
+      function abc (){{'{'}}
+        alert("Hello world");
+      {{'}'}}
+  </pre> 
+  <br>
+  In the above code we are invoking the function abc, even before it is defined. Yet we get the alert, saying Hello World. The reason being named functions are hoisted at the time of execution.
+ </fieldset>
+
+ <h3 class="text-warning">Note</h3>
+ <p class="text-success">It is a good practice to declare all the variables at the top of the function.</p>
+ <p class="text-success">
+   Only declarations are hoisted, not the initialization. Only named functions would be hoisted, no other types of function would be hoisted.
+ </p>
+ <div>
+  <a routerLink="/closure" class="btn btn-success btn-xs pull-right">Previous</a>
+</div>

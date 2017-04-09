@@ -1,0 +1,98 @@
+<ul class="breadcrumb">
+<li><a routerLink="">Home</a></li>
+<li class="active">Scope</li>
+</ul>
+
+
+<h2 class="text-info">Scope</h2>
+<blockquote>
+  <p>
+    Scope of a variable is defined as the portion of code where in we can access the variable. In javascript we have 2 scopes.
+  </p>
+  <ul>
+    <li>Function scope</li>
+    <li>Global scope</li>
+  </ul>
+</blockquote>
+<fieldset>
+  <legend class="text-info">Function scope</legend>
+  A variable defined inside a function would be accessible across the function, irrespective of the place where it is defined(thanks to variable hoisting). Consider a variable defined inside a for loop, it would be accessible across the function where-in it is defined.
+  <pre>
+      function abc(){{'{'}}
+       console.log('before for loop: ',i);
+       for(var i = 0; i < 5; i++){{'{'}}
+            console.log('inside for loop: ',i);
+       {{'}'}}
+       console.log('after for loop: ',i);
+      {{'}'}}
+  </pre> 
+  <br>
+  <code>
+      abc(); //would log <br>
+      <span class="text-success">before for loop: undefined <br>
+      inside for loop: 0 <br>
+      inside for loop: 1 <br>
+      inside for loop: 2 <br>
+      inside for loop: 3 <br>
+      inside for loop: 4 <br>
+      after for loop: 5
+      </span>
+  </code>
+  <br>
+  As we can see, there won't be an error thrown. The reason being the declaration is available at the top of the function/its current scope. Since no initialization has been done, the first console.log gave undefined. Within the for loop, it logged 0 to 4, and post the for loop 5, since at the end of the for loop the value of i is 5.
+</fieldset>
+<br>
+<fieldset>
+  <legend class="text-info">Global scope</legend>
+  As the name suggests, a variable declared globally would be accessible across all the functions in the script. Do not use global variable declarations unless required. The reason being, globally declared variables can be accessed &amp; modified by functions/methods across the script.
+  <pre>
+      (function(){{'{'}}
+        var x = 5;
+        function abc (){{'{'}}
+            console.log(x); <span class="text-success">// 5</span>
+            x++;
+        {{'}'}}
+        abc();
+        console.log(x); <span class="text-success">// 6</span>
+       {{"}"}})()
+  </pre> 
+  <br>
+    In the above code we have enclosed the whole code inside an IIFE to execute the entire code. On invoking the method abc, it logs 5 in the console, since variable x is defined globally. But within the method abc, the value of x is incremented, since it is globally declared variable, the value gets modified. Which is evident by the following console.log output.
+    <br>
+    This however can be avoided if we have a local/function scope variable. Consider the following code snippet
+    <pre>
+        (function(){{'{'}}
+        var x = 5;
+        function abc (){{'{'}}
+            var x = 5;
+            console.log(x); <span class="text-success">// 5</span>
+            x++;
+            console.log(x); <span class="text-success">// 6</span>
+        {{'}'}}
+        abc();
+        console.log(x); <span class="text-success">// 5</span>
+       {{"}"}})()
+    </pre>
+    <br>
+    The reason why the global variable value is not affected is because, within the function we had a variable, whose scope was within the function. So whatever modifications were done, was limited to the function itself. 
+ </fieldset>
+
+ <h3 class="text-warning">Note</h3>
+ <p class="text-success">While declaring global variables assign a namespace, so it doesn't clash with other global variable with same name</p>
+ <code class="text-success">
+     var myGlobalVars = {{'{'}}
+         gVar1 : 10,
+         gVar2 : 20
+     {{'}'}}
+ </code>
+ <br>
+ <p class="text-success">
+    In this case we can be sure of preventing global variable clash &amp; accidental modification of value. To access the global variables in the above format we use <br>
+    <code class="text-success">
+         myGlobalVars.gVar1
+    </code>
+ </p>
+ <div class="nxtPrvBtnDv">
+  <a routerLink="/functions" class="btn btn-success btn-xs pull-right">Previous</a>
+  <a routerLink="/object" class="btn btn-success btn-xs pull-right">Next</a>
+</div>
