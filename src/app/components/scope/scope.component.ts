@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppComponent } from "../../app.component";
 
 @Component({
     moduleId: module.id,
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
     templateUrl: 'scope.component.html',
 })
 export class ScopeComponent {
-
+    constructor(public appComponent : AppComponent){
+    }
+    scrollTop(){
+        this.appComponent.scrollTop();
+    }
 }
