@@ -1,6 +1,5 @@
 html {
   background-color: black;
-  position: relative;
   min-height: 100%;
   word-break: keep-all;
   text-align: justify;
@@ -75,3 +74,4 @@ pre {
     width : 100%;
   }
  }
+ 

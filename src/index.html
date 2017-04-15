@@ -7,21 +7,66 @@
   <meta name="author" content="Rakesh Prakash">
   <title>Js Junkie</title>
   <base href="/">
+  <style>
+    .loader {
+      position: absolute;
+      margin: 0 auto;
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      border-bottom: 16px solid #3498db;
+      width: 120px;
+      height: 120px;
+      top: 40%;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+    .loaderCss{
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @media screen and (max-width : 480px) and (orientation:potrait) {
+       .loader{
+          top: 42%;
+       }
+
+    }
+    @media screen and (max-width : 480px) and (orientation:landscape) {
+       .loader{
+          top: 30%;
+       }
+
+    }
+  </style>
   <link rel="stylesheet" href="bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="jquery.min.js"></script>
   <script src="bootstrap.min.js"></script>
 </head>
-<body>
- <my-app>Loading the awesome...</my-app>
+<body class="loaderCss">
+ <my-app></my-app>
+ <div class="loader"></div>
  <script>
-   // fix to change the navbar active toggle
+   // fix to change the navbar active to  ggle
    $(function(){
-      $(".nav a").on("click", function(){
-        $(".nav").find(".active").removeClass("active");
-        $(this).parent().addClass("active");
-      });
+     $('.loader').hide();
+     $('body').removeClass('loaderCss');
+     $(".nav a").on("click", function(){
+       $(".nav").find(".active").removeClass("active");
+       $(this).parent().addClass("active");
+     });
    })
 </script>
 </body>
